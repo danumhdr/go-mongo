@@ -6,7 +6,7 @@ import (
 )
 
 func PersonInsert(data []interface{}) error {
-	getResult := repository.InsertPerson(data, "person")
+	getResult := repository.InsertPerson(data)
 	return getResult
 }
 

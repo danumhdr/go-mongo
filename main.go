@@ -5,8 +5,16 @@ import (
 	"go-mongo/service"
 	"log"
 
+	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
 )
+
+func init() {
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+}
 
 func main() {
 	config.Connect()
@@ -23,11 +31,11 @@ func main() {
 	// }
 
 	//command untuk update
-	filter := bson.D{{Key: "name", Value: "Danu"}}
+	filter := bson.D{{Key: "name", Value: "Ika"}}
 
 	update := bson.D{
 		{Key: "$set", Value: bson.D{
-			{Key: "age", Value: 99},
+			{Key: "age", Value: 223},
 		}},
 	}
 
